@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML - Forms</title>
+</head>
+<body>
+  <form action="#">
+    <div>
+      <label for="email">Email:</label><br>
+      <input type="email" name="email" id="email" placeholder="email@example.com">
+    </div>
+    <div>
+      <label for="password">Password:</label><br>
+      <input type="password" name="password" id="password">
+    </div>
+    <div>
+      <label for="age">Age:</label><br>
+      <select name="age" id="age">
+        <option value="#">Select age</option>
+        <option value="0024">0-24</option>
+        <option value="2549">25-49</option>
+        <option value="5074">50-74</option>
+        <option value="7599">75-99</option>
+      </select>
+    </div>
+    <div>
+      <label for="about">Tell us a little about yourself:</label><br>
+      <textarea name="about" id="about" cols="45" rows="5"></textarea>
+    </div>
+    <div>
+      <input type="checkbox" name="terms" id="terms"> I agree ton the <a href="https://policies.google.com/terms">terms of service</a>
+    </div>
+    <div>
+      <button type="submit">Sign Up</button>
+    </div>
+  </form>
+</body>
+</html>
