@@ -1,0 +1,25 @@
+body {
+  background: #000000;
+  color: #f2f2f3;
+  display: flex;
+  font-family: 'Barlow', sans-serif;
+}
+main {
+  width: 75%;
+  padding: 5px;
+}
+#name {
+  color: #88d9d0;
+  font-weight: 900;
+}
+#work {
+  color: #e7c892;
+  font-weight: 700;
+}
+aside {
+  width: 25%;
+}
+img {
+  width: 100%;
+  border-radius: 5px;
+}

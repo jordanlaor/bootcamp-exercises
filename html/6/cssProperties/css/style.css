@@ -1,0 +1,15 @@
+#first-hello {
+  border: thin red solid;
+  font-size: x-large;
+  border-radius: 5px;
+}
+#second-hello {
+  font-weight: bold;
+  font-style: italic;
+}
+#third-hello {
+  box-shadow: rgba(30, 30, 30, 0.5) 3px 3px 5px;
+  background: black;
+  color: white;
+  font-family: monospace;
+}

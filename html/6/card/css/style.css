@@ -1,0 +1,17 @@
+body {
+  display: flex;
+}
+.card {
+  background: wheat;
+  box-shadow: rgba(20, 20, 20, 0.3) 2px 2px 3px;
+  width: 221px;
+  padding-bottom: 20px;
+  
+}
+.card img {
+  width: 221px;
+}
+.link {
+  font-size: 12px;
+  color: darkgoldenrod;
+}
