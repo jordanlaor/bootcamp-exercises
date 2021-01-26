@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+body {
+  background-color: #385069;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+div {
+  margin: 15px;
+}
+button {
+  border: none;
+  margin: 8px;
+}
+.container {
+  max-width: 85%;
+  margin: auto;
+}
+.title {
+  font-size: 30px;
+}
+.register {
+  padding: 10px;
+  font-size: 25px;
+}
+.clear {
+  padding: 8px;
+  font-size: 20px;
+}
+.submit {
+  padding: 6px;
+  font-size: 15px;
+}
+.ghost {
+  background-color: transparent;
+  border-width: 2px;
+}
+.round {
+  border-radius: 1em;
+}
+
+#flat .register {
+  background-color: #00BA6C;
+}
+#flat .register:hover{
+  background-color: #00ba6cc5;
+}
+#flat-ghost .register {
+  border: 2px #00BA6C solid;
+}
+#flat-ghost .register:hover{
+  background-color: #00ba6c;
+  
+}
+#round .register {
+  background-color: #F68302;
+}
+#round .register:hover{
+  background-color: #F68302c5;
+}
+#round-ghost .register {
+  border: 2px #F68302 solid;
+}
+#round-ghost .register:hover{
+  background-color: #F68302;
+}
+
+#flat .clear {
+  background-color: #FD2629;
+}
+#flat .clear:hover{
+  background-color: #FD2629c5;
+}
+#flat-ghost .clear {
+  border: 2px #FD2629 solid;
+}
+#flat-ghost .clear:hover{
+  background-color: #FD2629;
+  
+}
+#round .clear {
+  background-color: #F6D300;
+}
+#round .clear:hover{
+  background-color: #F6D300c5;
+}
+#round-ghost .clear {
+  border: 2px #F6D300 solid;
+}
+#round-ghost .clear:hover{
+  background-color: #F6D300;
+}
+
+#flat .submit {
+  background-color: #0599E1;
+}
+#flat .submit:hover{
+  background-color: #0599E1c5;
+}
+#flat-ghost .submit {
+  border: 2px #0599E1 solid;
+}
+#flat-ghost .submit:hover{
+  background-color: #0599E1;
+  
+}
+#round .submit {
+  background-color: #859796;
+}
+#round .submit:hover{
+  background-color: #859796c5;
+}
+#round-ghost .submit {
+  border: 2px #859796 solid;
+}
+#round-ghost .submit:hover{
+  background-color: #859796;
+}
+
+
