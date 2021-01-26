@@ -1,5 +1,5 @@
 body {
-  background: #000000;
+  background: #262626;
   color: #f2f2f3;
   display: flex;
   font-family: 'Barlow', sans-serif;
@@ -9,17 +9,18 @@ main {
   padding: 5px;
 }
 #name {
-  color: #88d9d0;
+  color: #3fe1ce;
   font-weight: 900;
 }
 #work {
   color: #e7c892;
   font-weight: 700;
 }
-aside {
+.side {
   width: 25%;
 }
-img {
+#profile-pic {
   width: 100%;
+  max-width: 190px;
   border-radius: 5px;
 }
