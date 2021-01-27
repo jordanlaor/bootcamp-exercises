@@ -1,0 +1,77 @@
+* {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: #344a72;
+  line-height: 1.8em;
+}
+
+a {
+  text-decoration: none;
+}
+
+#container {
+  margin: 30px auto;
+  max-width: 300px;
+  padding: 15px;
+}
+
+.form-wrap {
+  background: #ffffff;
+  padding: 12px;
+  margin: 10px;
+}
+
+.form-wrap h1,
+.form-wrap p {
+  text-align: center;
+}
+
+.form-wrap .form-group {
+  /* 
+    Each label, input is wrapped in .form-group
+  */
+  margin: 10px;
+}
+
+.form-wrap .form-group label {
+  display: block;
+}
+
+.form-wrap .form-group input {
+  width: 100%;
+  padding: 3px;
+}
+
+.form-wrap button {
+  margin: 10px;
+  padding: 3px;
+  width: calc(100% - 20px);
+  display: block;
+  background: #49c1a2;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+}
+
+.form-wrap button:hover {
+  background: #37a08e;
+}
+
+.form-wrap .bottom-text {
+  font-size: 0.6em;
+}
+
+footer {
+  text-align: center;
+  color: #ffffff;
+}
+
+footer a {
+
+  color: #49c1a2;
+}

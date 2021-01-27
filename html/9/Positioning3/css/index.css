@@ -1,0 +1,36 @@
+body{
+  position: relative;
+}
+.box {
+  border: 2px black solid;
+  background: white;
+  position: absolute;
+}
+#box-1 {
+  top: 0px;
+  left:0px;
+  z-index: 1;
+  width: 100px;
+  height: 90px;
+}
+#box-2 {
+  top: 55px;
+  left:60px;
+  z-index: 2;
+  width: 90px;
+  height: 130px;
+}
+#box-3 {
+  top: 155px;
+  left:0px;
+  z-index: 3;
+  width: 250px;
+  height: 60px;
+}
+#box-4 {
+  top: 0px;
+  left: 200px;
+  z-index: 3;
+  width: 40px;
+  height: 250px;
+}
