@@ -1,0 +1,32 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: rosybrown;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 20vh;
+  height: 20vh;
+  flex: 0 1 auto;
+}
+
+#box-green {
+  background-color: seagreen;
+}
+
+#box-purple {
+  background-color: rebeccapurple;
+}
+
+#box-orange {
+  background-color: orange;
+}
