@@ -11,7 +11,7 @@ html {
 
 body {
   background: #1a1a1d;
-  margin: 4vh 24vw;
+  margin: 0 24vw 4vh 24vw;
 }
 
 .page {
@@ -71,4 +71,24 @@ h3 {
 
 p {
   opacity: 0.8;
+}
+
+
+.navbar {
+  display: flex;
+  background: #95074059;
+}
+
+.nav-link {
+  flex-grow: 1;
+  border: 1px dotted #1a1a1d;
+  padding: 1vh;
+  text-align: center;
+
+}
+
+.nav-link a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 2vh;
 }

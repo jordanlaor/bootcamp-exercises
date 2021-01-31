@@ -1,10 +1,9 @@
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 990px) {
   body {
     margin: 20px 170px;
   }
-}
 
-h6 {
+  h6 {
   display: none;
 }
 
@@ -37,5 +36,10 @@ main {
   margin-top: 10px;
   width: 100%;
   height: fit-content;
+}
+
+.navbar {
+  display: none;
+}
 }
 
