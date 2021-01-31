@@ -1,0 +1,15 @@
+div {
+  font-size: 4vw;
+}
+
+@media (max-width: 450px){
+  div {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 800px){
+  div {
+    font-size: 32px;
+  }
+}
