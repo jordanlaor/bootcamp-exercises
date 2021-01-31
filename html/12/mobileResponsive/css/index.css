@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.column {
+  width: 23vw;
+  margin: 2vh 0.5vw;
+  display: inline-block;
+  background: cornflowerblue;
+  height: 14vh;
+  vertical-align: top;
+}
