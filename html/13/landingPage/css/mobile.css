@@ -1,0 +1,41 @@
+@media screen and (max-width: 1000px) {
+  body {
+    margin: 20px 170px;
+  }
+}
+
+h6 {
+  display: none;
+}
+
+header > h1 {
+  font-size: 40px;
+}
+
+header > h2 {
+  font-size: 20px;
+}
+
+.info-boxes {
+  margin-top: 20px;
+  justify-content: space-evenly;
+  height: fit-content;
+}
+
+main {
+  height: fit-content;
+}
+
+#boxes {
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+}
+
+.box {
+  margin-top: 10px;
+  width: 100%;
+  height: fit-content;
+}
+
