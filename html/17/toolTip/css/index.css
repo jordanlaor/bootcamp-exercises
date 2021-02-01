@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+div {
+  padding: 1.2rem 2.6rem;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tooltip {
+  position: relative;
+}
+
+.tooltip:hover::after {
+  content: attr(data-tooltip);
+  background: #945adaa4;
+  color: #ffffff;
+  padding: 3px;
+  font-size: 0.8rem;
+  border:1px solid #000000a4;
+  margin-bottom: -7.5px;;
+  border-radius: 4px;
+  position: absolute;
+  bottom: 100%;
+  left: 0px;
+}
