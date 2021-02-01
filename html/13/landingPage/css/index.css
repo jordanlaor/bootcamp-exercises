@@ -70,7 +70,7 @@ h3 {
 }
 
 p {
-  opacity: 0.8;
+  color: #ffffffb0;
 }
 
 
@@ -84,6 +84,7 @@ p {
   border: 1px dotted #1a1a1d;
   padding: 1vh;
   text-align: center;
+  background: transparent;
 
 }
 
@@ -91,4 +92,15 @@ p {
   text-decoration: none;
   color: #ffffff;
   font-size: 2vh;
+}
+
+.special {
+  font-weight: 800;
+  font-size: 1.7vh;
+  color: #ffffffc0;
+  cursor: pointer;
+}
+
+#names:target {
+  background: url("");
 }

@@ -64,9 +64,9 @@
   #box-professional:target {
     display: block;
   }
-}
 
-.nav-link {
-  flex-grow: 0;
-  background: #95074059;
+  .nav-link {
+    flex-grow: 0;
+    background: #95074059;
+  }
 }
