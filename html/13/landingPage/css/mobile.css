@@ -5,41 +5,68 @@
 
   h6 {
   display: none;
+  }
+
+  header > h1 {
+    font-size: 40px;
+    margin-top: 3px;
+    margin-bottom: 14px;
+  }
+
+  header > h2 {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .info-boxes {
+    margin-top: 20px;
+    justify-content: space-evenly;
+    height: fit-content;
+  }
+
+  .main {
+    height: fit-content;
+    display: none;
+  }
+
+  #boxes {
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+
+  }
+
+  .box {
+    margin-top: 10px;
+    width: 100%;
+    height: fit-content;
+    display: none;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;  
+    min-width: fit-content;
+    height: 150px;
+    justify-content: center;
+    background: transparent;
+  }
+
+  #box-nicknames:target {
+    display: block;
+  }
+
+  #box-hobbies:target {
+    display: block;
+  }
+
+  #box-professional:target {
+    display: block;
+  }
 }
 
-header > h1 {
-  font-size: 40px;
+.nav-link {
+  flex-grow: 0;
+  background: #95074059;
 }
-
-header > h2 {
-  font-size: 20px;
-}
-
-.info-boxes {
-  margin-top: 20px;
-  justify-content: space-evenly;
-  height: fit-content;
-}
-
-main {
-  height: fit-content;
-}
-
-#boxes {
-  flex-direction: column;
-  width: 100%;
-  height: fit-content;
-  justify-content: space-between;
-}
-
-.box {
-  margin-top: 10px;
-  width: 100%;
-  height: fit-content;
-}
-
-.navbar {
-  display: none;
-}
-}
-
