@@ -1,0 +1,14 @@
+.box {
+  background: orange;
+  width: 20vh;
+  height: 20vh;
+  position: relative;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  background: darkslateblue;
+  width: 50%;
+  height: 100%;
+}
