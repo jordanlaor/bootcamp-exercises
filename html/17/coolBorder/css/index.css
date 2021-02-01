@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  background: black;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  color: white;
+  width: 50vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: red 3px solid;
+  position: relative;
+}
+
+.box h1 {
+  z-index: 1;
+}
+
+.box::before {
+  content: "";
+  width: 70%;
+  height: 110%;
+  background: black;
+  position: absolute;
+  margin: auto;
+}
+
+.box::after {
+  content: "";
+  height: 70%;
+  width: 110%;
+  background: black;
+  position: absolute;
+  margin: auto;
+}
