@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.box {
+  width: 30vh;
+  height: 30vh;
+  background: orange;
+  position: relative;
+  overflow: hidden;
+}
+
+.box::before {
+  content: " ";
+  height: 100%;
+  width: 100%;
+  background: slateblue;
+  position: absolute;
+  transform: translateX(100%);
+  transition: all 2.5s ease-in-out;
+}
+
+.box:hover::before {
+  transform: translate(0);
+}
