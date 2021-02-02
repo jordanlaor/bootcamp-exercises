@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.box {
+  width: max-content;
+  padding: 15px 40px;
+  margin: 20px 0px;
+  border: black 3px solid;
+  font-size: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.box::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+/* Rotate */
+#rotate::before {
+  content: "";
+  background: yellow;
+  z-index: -1;
+  transition: all 2s ease-in-out;
+  transform: rotate(-180deg);
+  transform-origin: top left;
+  bottom: 0;
+  right: 0;
+}
+
+#rotate:hover::before {
+  transform: rotate(0);
+  transform-origin: top left;
+  transition: all 2s ease-in-out;
+}
+
+/* translate */
+#translate::before {
+  content: "";
+  background: black;
+  z-index: -1;
+  transition: all 2s ease-in-out;
+  transform: translateX(-100%);
+  top: 0;
+  left: 0;
+}
+#translate {
+  transition: all 2s ease-in-out;
+}
+
+#translate:hover::before {
+  transform: translateX(0);
+  transition: all 2s ease-in-out;
+}
+
+#translate:hover {
+  color: white;
+}
+
+/* TranslateY */
+#translateY::before {
+  content: "YEAH!";
+  color: black;
+  background: Red;
+  transition: all 2s ease-in-out;
+  transform: translateY(-100%);
+  top: 0;
+  left: 0;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+#translateY {
+  transition: all 2s ease-in-out;
+}
+
+#translateY:hover::before {
+  transform: translateY(0);
+  transform-origin: top left;
+  transition: all 2s ease-in-out;
+}
+
+#scale-opacity::before {
+  content: "Scale & Opacity";
+  width: 100%;
+  height: 100%;
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  left: 0px;
+  transform: scale(2);
+  opacity: 0;
+  transition: all 2s ease-in-out;
+}
+
+#scale-opacity:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
