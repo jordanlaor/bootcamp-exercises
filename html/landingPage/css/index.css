@@ -4,27 +4,39 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #950740;
+  --color-secondary: #6f2232;
+  --color-dark: #1a1a1d;
+  --color-dark-rgb: 26, 26, 29;
+  --color-white: #ffffff;
+  --color-white-rgb: 255, 255, 255;
+  --opacity-5: 0.5;
+  --opacity-8: 0.8;
+}
+
 html {
   font-size: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-  background: #1a1a1d;
+  background: var(--color-dark);
   margin: 0 24vw 4vh 24vw;
 }
 
 .page {
   height: 100vh;
+  position: relative;
 }
 
 header > h1 {
-  color: #950740;
+  color: var(--color-primary);
   font-size: 6.86vh;
 }
 
 header > h2 {
-  color: #6f2232;
+  color: var(--color-secondary);
   font-size: 3.8vh;
 }
 
@@ -51,7 +63,7 @@ h6 {
 .main, .box {
   border: #c3073f 1px dotted;
   border-radius: 6px;
-  background: #6f2232;
+  background: var(--color-secondary);
   padding: 2vh 5vh;
 }
 
@@ -60,7 +72,7 @@ h6 {
 }
 
 h3, p {
-  color: #ffffff;
+  color: var(--color-white);
   font-weight: normal;
   font-size: 1.6vh;
 }
@@ -69,38 +81,57 @@ h3 {
   font-size: 2vh;
 }
 
-p {
-  color: #ffffffb0;
+p{
+  color: rgba(var(--color-white-rgb), var(--opacity-5));
 }
 
 
 .navbar {
   display: flex;
-  background: #95074059;
+  margin: 12px 0px 8px;
 }
 
 .nav-link {
   flex-grow: 1;
-  border: 1px dotted #1a1a1d;
+  border: 1px dotted var(--color-dark);
   padding: 1vh;
   text-align: center;
-  background: transparent;
+  position: relative;
+}
 
+.nav-link::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  opacity: 0.5;
+  top: 0px;
+  left: 0px;
+  border-radius: 3px;
 }
 
 .nav-link a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-white);
   font-size: 2vh;
 }
 
 .special {
   font-weight: 800;
   font-size: 1.7vh;
-  color: #ffffffc0;
+  color: rgba(var(--color-white-rgb), var(--opacity-8));
   cursor: pointer;
 }
 
-#names:target {
-  background: url("");
+#box-nicknames:target~.page::before {
+  content: "";
+  background: url("../images/names.png") no-repeat center center/contain;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
