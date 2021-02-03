@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.grid {
+  height: 100vh;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  grid-template-areas:
+    "red red red"
+    "blue green green"
+    "blue purple-1 purple-2";
+  gap: 10px;
+}
+
+.red,
+.blue,
+.green,
+.purple {
+  border-radius: 12px;
+}
+
+.red {
+  grid-area: red;
+  background: red;
+}
+
+.blue {
+  grid-area: blue;
+  background: blue;
+}
+.green {
+  grid-area: green;
+  background: green;
+}
+.purple {
+  background: purple;
+}
+
+.purple:first-child {
+  grid-area: purple-1;
+}
+
+.purple:last-child {
+  grid-area: purple-2;
+}
