@@ -10,9 +10,11 @@
     "red red blue blue"
     "green purple purple purple"
     "yellow yellow yellow yellow";
-  height: 100vh;
+  height: max-content;
   gap: 2vh;
   padding: 10px;
+  color: white;
+  font-size: 2rem;
 }
 
 .red,
@@ -20,6 +22,7 @@
 .green,
 .purple,
 .yellow {
+  padding: 15px;
   border-radius: 10px;
 }
 
