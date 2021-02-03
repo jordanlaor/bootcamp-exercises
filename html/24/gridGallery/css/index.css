@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  overflow: hidden;
+  height: 100vh;
+  gap: 3px;
+  padding: 3px;
+}
+
+.img {
+  border-radius: 2px;
+}
+
+.img01 {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 2;
+  background: url("../images/gal-1.jpeg") center center/cover;
+}
+
+.img02 {
+  grid-row: 1;
+  grid-column: 3;
+  background: url("../images/gal-2.jpeg") center center / cover;
+}
+
+.img03 {
+  grid-row: 2;
+  grid-column: 3;
+  background: url("../images/gal-3.jpeg") center center / cover;
+}
+
+.img04 {
+  grid-row: 1 / span 2;
+  grid-column: 4 / span 2;
+  background: url("../images/gal-4.jpeg") center center / cover;
+}
+
+.img05 {
+  grid-row: 4 / span 2;
+  grid-column: 1;
+  background: url("../images/gal-5.jpeg") right center / cover;
+}
+
+.img08 {
+  grid-row: 3 / span 3;
+  grid-column: 2 / span 3;
+  background: url("../images/gal-8.jpeg") center center / cover;
+}
+
+.img06 {
+  grid-row: 3;
+  grid-column: 5;
+  background: url("../images/gal-6.jpeg") center center / cover;
+}
+
+.img07 {
+  grid-row: 4;
+  grid-column: 5;
+  background: url("../images/gal-7.jpeg") center center / cover;
+}
+
+.img09 {
+  grid-row: 3;
+  grid-column: 1;
+  background: url("../images/gal-9.jpeg") center center / cover;
+}
+
+.img10 {
+  grid-row: 6;
+  grid-column: 1;
+  background: url("../images/gal-10.jpeg") center center / cover;
+}
+
+.img11 {
+  grid-row: 6;
+  grid-column: 2;
+  background: url("../images/gal-11.jpeg") center center / cover;
+}
+
+.img12 {
+  grid-row: 6;
+  grid-column: 3;
+  background: url("../images/gal-12.jpeg") center center / cover;
+}
+
+.img13 {
+  grid-row: 6;
+  grid-column: 4;
+  background: url("../images/gal-13.jpeg") center center / cover;
+}
+
+.img14 {
+  grid-row: 5 / span 2;
+  grid-column: 5;
+  background: url("../images/gal-11.jpeg") 70% center / cover;
+}
