@@ -47,5 +47,7 @@ const total = (bill * tax).toFixed(2);
 console.log(`Your total bill is ${total} $`);
 
 // Round the number 50.6 to its nearest integer
+Math.round(50.6);
 
 // Create a variable that is undefined
+let undef;
