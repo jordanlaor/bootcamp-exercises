@@ -1,5 +1,14 @@
+/* eslint-disable no-console */
 const date = new Date(Date.now());
-const options = { weekday: 'long' };
-const day = date.toLocaleDateString(undefined, options);
-// eslint-disable-next-line no-console
-console.log(day);
+const options = {
+  weekday: { weekday: 'long' },
+  month: { month: 'long' },
+};
+const dayOfWeek = date.toLocaleDateString(undefined, options.weekday);
+console.log(dayOfWeek);
+const dayOfMonth = date.getDate();
+console.log(dayOfMonth);
+const month = date.toLocaleDateString(undefined, options.month);
+console.log(month);
+const year = date.getFullYear();
+console.log(year);
