@@ -19,7 +19,6 @@ function before1990(array) {
 
 function foodCounted(array) {
   const foods = array.map((element) => Object.values(element.favoriteFoods)).flat(Infinity);
-  foods.sort((a, b) => (a.toLowerCase() < b.toLowerCase() ? -1 : a.toLowerCase() > b.toLowerCase() ? 1 : 0));
   const obj = {};
   for (const food of foods) {
     if (obj.hasOwnProperty(food)) {
