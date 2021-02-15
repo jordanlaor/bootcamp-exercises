@@ -1,3 +1,5 @@
+/* eslint-disable no-shadow */
+/* eslint-disable no-console */
 /* eslint-disable no-unused-expressions */
 const school = {
   teachers: [
