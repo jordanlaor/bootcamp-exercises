@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 const school = {
   teachers: [
     {
@@ -37,10 +38,31 @@ const school = {
       age: 21,
     },
   ],
-  getById(id, prop) {
-    return this[prop].find((item) => item.id === id);
+  findPerson(id, type) {
+    return this[type].find((item) => item.id === id);
+  },
+  assignStudent(id, subject) {
+    const student = this.findPerson(id, 'students');
+    const teacher = this.teachers.find((teacher) => teacher.subjects.includes(subject) && teacher.capacityLeft > 0);
+    if (teacher) {
+      teacher.students.push(student);
+      teacher.capacityLeft -= 1;
+    } else {
+      console.log('Sorry, no available teachers left');
+    }
   },
   assignTeachersSubject(id, subject) {
-    this.getById(id, 'teachers').subjects.push(subject);
+    const teacher = this.findPerson(id, 'teachers');
+    teacher && !teacher.subjects.includes(subject) ? teacher.subjects.push(subject) : null;
+  },
+  newTeacher(name, subjects, capacity) {
+    const id = this.teachers.length;
+    this.teachers.push({
+      id,
+      name,
+      subjects,
+      students: [],
+      capacityLeft: capacity,
+    });
   },
 };
