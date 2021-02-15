@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 function canBeRead(library) {
   library.forEach((book) => {
     book.readingStatus
