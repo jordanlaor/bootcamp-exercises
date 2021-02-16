@@ -58,7 +58,7 @@ const school = {
     teacher && !teacher.subjects.includes(subject) ? teacher.subjects.push(subject) : null;
   },
   newTeacher(name, subjects, capacity) {
-    const id = this.teachers.length;
+    const id = this.teachers.length + 1;
     this.teachers.push({
       id,
       name,
