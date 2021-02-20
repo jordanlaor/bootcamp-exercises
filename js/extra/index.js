@@ -51,4 +51,13 @@ function quadratic(a, b, c) {
 
 // 7
 // כתוב פונקציה countABC המקבלת משפט , החזר מערך המציין כמה פעמים מופיעה כל אות.
-function countABC(str) {}
+function countABC(str) {
+  const counter = {};
+  const chars = str.toLowerCase().split('');
+  chars.forEach(char => {
+    if(char.match(/[a-z]/)) {
+      counter[char] = counter[char] + 1 || 1;
+    }
+  });
+  return counter;
+}
