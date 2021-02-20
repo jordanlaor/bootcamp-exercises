@@ -61,3 +61,16 @@ function countABC(str) {
   });
   return counter;
 }
+
+// 8
+// כתוב פונקציה toUpper המקבלת מחרוזת str באנגלית ומחזירה את המחרוזת באותיות גדולות (אין להשתמש בפעולה  toUpperCase של js ).
+function toUpper(str) {
+  const chars = str.split('').map((char) => {
+    let charCode = char.charCodeAt(0);
+    if (charCode >= 97 && charCode <= 122) {
+      return String.fromCharCode(charCode - 32);
+    }
+    return char;
+  });
+  return chars.join('');
+}
