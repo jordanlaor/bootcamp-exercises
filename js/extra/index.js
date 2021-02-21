@@ -74,3 +74,11 @@ function toUpper(str) {
   });
   return chars.join('');
 }
+
+// 9
+/* כתוב פונקציה checkPassword המקבלת פרמטר password  , הפונקציה מחזירה true במידה והתנאים הבאים מתקיימים : 
+א. יש לפחות 3 מספרים
+ב. יש 2 אותיות גדולות
+ג. אות אחת קטנה
+במידה והתנאים לא מתקיימים יש להחזיר false. */
+function checkPassword (password) 
