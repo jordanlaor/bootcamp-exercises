@@ -1,0 +1,13 @@
+.hidden {
+  display: none;
+}
+.message {
+  font-size: 1.5rem;
+  color: red;
+  font-weight: 700;
+}
+
+.whylabel {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
