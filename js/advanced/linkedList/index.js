@@ -99,12 +99,25 @@ class LinkedList {
     }
     return false;
   }
+
+  static circularLinkedListV2(listToCheck) {
+    let next = listToCheck.head;
+    let doubleNext = next.next;
+    while (next && doubleNext) {
+      if (next === doubleNext) {
+        return true;
+      }
+      next = next.next;
+      doubleNext = doubleNext.next.next;
+    }
+    return false;
+  }
 }
 
 const list = new LinkedList();
 const one = list.push(1);
 list.push(2);
-list.push(3);
+const three = list.push(3);
 list.push(4);
 list.push(5);
-list.changeLastNext(one);
+list.changeLastNext(three);
