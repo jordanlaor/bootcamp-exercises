@@ -102,7 +102,6 @@ cards.forEach((card) => {
   btn.textContent = 'delete';
   card.append(btn);
   card.addEventListener('click', (e) => {
-    console.log(e.target.tagName);
     if (e.target.tagName === 'BUTTON') {
       e.currentTarget.remove();
     }
