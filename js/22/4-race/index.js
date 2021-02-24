@@ -9,6 +9,11 @@ function updateBoard(player) {
     window.removeEventListener('keyup', checkKey);
     const title = document.querySelector('h1');
     title.textContent += `   -   ${player.getAttribute('data-player')} Won`;
+    setTimeout(() => {
+      if (confirm('restart?')) {
+        window.location.reload();
+      }
+    }, 1);
   }
 }
 
