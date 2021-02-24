@@ -12,7 +12,7 @@ const secs = { element: document.querySelector('.secs'), counter: 0 };
 const mins = { element: document.querySelector('.mins'), counter: 0 };
 
 function timeCount(unit, countTo) {
-  if (mili.counter === countTo) {
+  if (unit.counter === countTo) {
     unit.counter = 0;
   } else {
     unit.counter += 1;
@@ -25,8 +25,7 @@ let secsInterval;
 let minsInterval;
 
 startBtn.firstElementChild.addEventListener('input', (e) => {
-  console.log(e);
-  miliInterval = setInterval(() => timeCount(mili, 99), 1);
+  miliInterval = setInterval(() => timeCount(mili, 99), 10);
   secsInterval = setInterval(() => timeCount(secs, 59), 1000);
   minsInterval = setInterval(() => timeCount(mins, 59), 60000);
 });
