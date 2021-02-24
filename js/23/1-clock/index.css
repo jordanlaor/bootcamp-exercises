@@ -24,24 +24,28 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 33vh;
   width: 0;
   border: 1.5px solid #222222;
   border-top-right-radius: 50%;
   border-top-left-radius: 50%;
   transform-origin: bottom;
   transition: transform linear 1s;
+  width: 1px;
+  background-color: rgb(235, 235, 235);
 }
 
 .hour {
   transform: rotate(0deg);
+  height: 28vh;
 }
 
 .minute {
   transform: rotate(0deg);
+  height: 30vh;
 }
 
 .second {
   transform: rotate(0deg);
   border-color: orange;
+  height: 33vh;
 }
