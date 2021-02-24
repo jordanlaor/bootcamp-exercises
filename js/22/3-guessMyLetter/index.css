@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: wheat;
+  font-family: "Londrina Solid", cursive;
+  font-weight: 300;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: 900;
+}
+
+h2,
+h4 {
+  font-weight: 400;
+}
+
+.heading-wrapper {
+  width: fit-content;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.letter {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-weight: 900;
+  padding: 15px;
+  background-color: steelblue;
+  border-radius: 50%;
+}
+
+.feedback {
+  color: #454a52;
+}
+
+.footer {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.guessed-cards {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #454a52;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin: 0 3px 4px;
+}
+
+.button {
+  background-color: #2e8b56b0;
+  color: black;
+  border-radius: 50%;
+  padding: 20px;
+  width: max-content;
+  transition: 3ms all ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.button > p {
+  width: max-content;
+}
+
+.button:hover {
+  background-color: #2e8b56;
+  cursor: pointer;
+}
