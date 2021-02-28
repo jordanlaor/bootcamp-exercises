@@ -17,18 +17,21 @@ function Car(make, speed) {
 }
 
 Car.prototype.accelerate = function () {
+  console.log(`the speed of the ${this.make} is ${this.speed}`);
   this.speed += 10;
-  console.log(`the new speed of the ${this.make} is ${this.speed}`);
+  console.log(`and now it's ${this.speed}`);
 };
 
 Car.prototype.brake = function () {
-  this.speed -= 10;
-  console.log(`the new speed of the ${this.make} is ${this.speed}`);
+  console.log(`the speed of the ${this.make} is ${this.speed}`);
+  this.speed -= 5;
+  console.log(`and now it's ${this.speed}`);
 };
 
 const car1 = new Car('BMW', 120);
 const car2 = new Car('Mercedes', 95);
 car1.accelerate();
+car1.brake();
 car1.accelerate();
 car1.accelerate();
 car1.accelerate();
@@ -36,3 +39,4 @@ car2.brake();
 car2.brake();
 car2.brake();
 car2.brake();
+car2.accelerate();
