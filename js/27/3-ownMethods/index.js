@@ -17,11 +17,11 @@ Array.prototype.myFind = function (callback) {
   }
 };
 
-Array.prototype.myReduce = function (callback, ...param) {
+Array.prototype.myReduce = function (callback, initialValue) {
   let acc;
   let i = 0;
-  if (param.length > 0) {
-    acc = param[0];
+  if (initialValue) {
+    acc = initialValue;
   } else {
     acc = this[i];
     i += 1;
