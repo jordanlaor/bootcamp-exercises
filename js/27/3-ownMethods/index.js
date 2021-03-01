@@ -18,6 +18,9 @@ Array.prototype.myFind = function (callback) {
 };
 
 Array.prototype.myReduce = function (callback, initialValue) {
+  if (typeof callback !== 'function') {
+    return undefined;
+  }
   let acc;
   let i = 0;
   if (initialValue) {
