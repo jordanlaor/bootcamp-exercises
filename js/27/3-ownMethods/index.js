@@ -1,7 +1,7 @@
 /* eslint-disable no-extend-native */
 Array.prototype.myFilter = function (callback) {
   if (typeof callback !== 'function') {
-    return 'your callback is not a function';
+    throw new Error('your callback is not a function');
   }
   const returnArr = [];
   for (let i = 0; i < this.length; i += 1) {
@@ -14,7 +14,7 @@ Array.prototype.myFilter = function (callback) {
 
 Array.prototype.myFind = function (callback) {
   if (typeof callback !== 'function') {
-    return 'your callback is not a function';
+    throw new Error('your callback is not a function');
   }
   for (let i = 0; i < this.length; i += 1) {
     if (callback(this[i], i, this)) {
@@ -25,7 +25,7 @@ Array.prototype.myFind = function (callback) {
 
 Array.prototype.myReduce = function (callback, initialValue) {
   if (typeof callback !== 'function') {
-    return 'your callback is not a function';
+    throw new Error('your callback is not a function');
   }
   let acc;
   let i = 0;
