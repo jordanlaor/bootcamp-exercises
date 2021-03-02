@@ -24,23 +24,23 @@ async function getPerson(num) {
   });
 }
 
-async function getCharacters() {
-  for (let i = 1; i <= 10; i += 1) {
-    await getPerson(i);
-  }
-  return await characters;
-}
-
-async function main(characters) {
+async function main(chars) {
   const table = document.createElement('table');
   table.innerHTML = `
   <tr>
     <th>Star Wars</th>
   </tr>
   <tr>
-      ${Object.keys(await characters[0]).forEach((key) => `<td>${key}</td>`)}
+      ${Object.keys(await chars[0]).forEach((key) => `<td>${key}</td>`)}
   </tr>`;
   htmlBody.append(table);
 }
 
-main(getCharacters());
+async function getCharacters() {
+  for (let i = 1; i <= 10; i += 1) {
+    await getPerson(i);
+  }
+  main(characters);
+}
+
+getCharacters();
