@@ -7,8 +7,9 @@ async function getInfo(num, type) {
   return await response.json();
 }
 
-async function getPerson(num) {
+function getPerson(num) {
   const character = {};
+  console.log(getInfo());
   getInfo(num, 'people').then((person) => {
     character.name = person.name;
     character.height = person.height;
@@ -25,14 +26,16 @@ async function getPerson(num) {
 }
 
 async function main(chars) {
+  console.log(characters);
   const table = document.createElement('table');
   table.innerHTML = `
   <tr>
     <th>Star Wars</th>
-  </tr>
-  <tr>
-      ${Object.keys(await chars[0]).forEach((key) => `<td>${key}</td>`)}
   </tr>`;
+
+  for (const key of Object.keys(chars[0])) {
+    table.innerHTML += `<tr><td>${key}</td></tr>`;
+  }
   htmlBody.append(table);
 }
 
@@ -40,7 +43,6 @@ async function getCharacters() {
   for (let i = 1; i <= 10; i += 1) {
     await getPerson(i);
   }
-  main(characters);
 }
 
 getCharacters();
