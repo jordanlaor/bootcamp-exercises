@@ -22,11 +22,9 @@ const getRecipe = (recipeID) =>
 
 async function fetch() {
   const ids = await getIDs();
-  const recipes = async (ids) => {
-    console.log(ids);
-    return await getRecipe(ids[2]);
-  };
-  console.log(recipes());
+  console.log(ids);
+  const recipe = await getRecipe(ids[2]);
+  console.log(recipe);
 }
 
 fetch().catch((error) => {
