@@ -23,12 +23,15 @@ async function getPerson(num) {
     });
   });
 }
-async function main() {
+
+async function getCharacters() {
   for (let i = 1; i <= 10; i += 1) {
     await getPerson(i);
   }
+  return await characters;
+}
 
-  console.log(await characters);
+async function main(characters) {
   const table = document.createElement('table');
   table.innerHTML = `
   <tr>
@@ -39,3 +42,5 @@ async function main() {
   </tr>`;
   htmlBody.append(table);
 }
+
+main(getCharacters());
