@@ -60,7 +60,7 @@ async function buildHTML() {
 }
 
 async function getCharacters() {
-  for (let i = 1; i <= 10; i += 1) {
+  for (let i = 1; i <= 20; i += 1) {
     await getPerson(i);
   }
 }

@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Architects Daughter", cursive;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 22vh 1fr;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 19px;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url("./githubBG.jpg") center center/cover no-repeat;
+  height: 100vh;
+  width: -webkit-fill-available;
+  z-index: -1;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.url-wrapper,
+button {
+  width: 500px;
+}
+
+.url-wrapper {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  appearance: textfield;
+  background-color: #ffffff;
+  border-width: 2px;
+  border-style: outset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  overflow: hidden;
+}
+
+input,
+label {
+  background: unset;
+  border: unset;
+}
+
+input,
+button,
+label {
+  font-size: 20px;
+  padding: 6px;
+}
+
+input {
+  width: 100%;
+  background: none;
+}
+
+:focus {
+  outline: #575757a1 auto 1px;
+}
+
+.cards-wrapper {
+  padding: 0 10px 10px;
+  min-height: 100%;
+  height: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  align-self: flex-start;
+  border: #323232;
+  border-radius: 15px;
+  background: #ffffff67;
+  margin: 10px;
+  padding: 15px;
+  width: 300px;
+  display: inline-block;
+}
+
+.card-link {
+  color: unset;
+  text-decoration: unset;
+}
+
+img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+a {
+  color: #074423;
+  font-weight: 500;
+}
+
+h2 {
+  height: 78px;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.errorMessage {
+  color: #7e1325;
+  font-size: 22px;
+}
