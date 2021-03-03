@@ -17,11 +17,17 @@ function handleError(err) {
 function addCard(userInfo) {
   const card = document.createElement('div');
   card.classList.add('card');
-  card.innerHTML = `<a class="card-link" href="${userInfo.htmlURL}" target="_blank">
-  <img src="${userInfo.photo}" alt="" />
-        <h2>${userInfo.username}</h2>
-        <div>Number of public Repos: ${userInfo.publicRepos}</div>
-        <a href="${userInfo.htmlURL}" target="_blank">To the profile</a></a>`;
+  card.innerHTML = `<a class="card-link" href=${userInfo.htmlURL} target="_blank">
+<div class="img-container">
+<img src="${userInfo.photo}" alt="" />
+</div>
+<div class="info-wrapper">
+<h3>${userInfo.username}</h3>
+<h2>${userInfo.name}</h2>
+<div>Number of public Repos: ${userInfo.publicRepos}</div>
+<a href=${userInfo.htmlURL} target="_blank">To the profile</a>
+</div>
+</a>`;
   CARDS_WRAPPER.prepend(card);
 }
 
@@ -33,14 +39,13 @@ async function fetchUser(e) {
   } else {
     try {
       const response = await fetch(`${BASE_URL}${USERNAME.value}`);
-      console.log(response);
       const data = await response.json();
       if (!response.ok) {
         handleError(data.message);
       } else {
-        console.log(data);
         users[USERNAME.value] = {
-          username: data.name,
+          username: data.login,
+          name: data.name,
           photo: data.avatar_url,
           publicRepos: data.public_repos,
           htmlURL: data.html_url,

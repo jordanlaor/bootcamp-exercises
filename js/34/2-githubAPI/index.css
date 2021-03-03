@@ -84,11 +84,11 @@ input {
   align-self: flex-start;
   border: #323232;
   border-radius: 15px;
-  background: #ffffff67;
+  background: #ffffff4d;
   margin: 10px;
-  padding: 15px;
   width: 300px;
   display: inline-block;
+  overflow: hidden;
 }
 
 .card-link {
@@ -96,9 +96,19 @@ input {
   text-decoration: unset;
 }
 
+.img-container,
+.info-wrapper {
+  padding: 15px;
+}
+
+.img-container {
+  padding-bottom: 0;
+}
+
 img {
   width: 100%;
-  border-radius: 15px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 a {
@@ -111,6 +121,11 @@ h2 {
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
+}
+
+.info-wrapper {
+  background: #ffffff4d;
+  height: max-content;
 }
 
 .hidden {
