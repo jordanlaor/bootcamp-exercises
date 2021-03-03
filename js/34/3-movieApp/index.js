@@ -2,18 +2,45 @@ const DATA_URL = `http://www.omdbapi.com/?apikey=36152117&t=`;
 const SEARCH_BTN = document.querySelector('button');
 const MOVIE_NAME = document.querySelector('input');
 const ERROR_MESSAGE = document.querySelector('.errorMessage');
+const MOVIE_CARD = document.querySelector('.movie-card');
 const movie = {};
+let obj;
 
 function focusOnInput() {
-  USERNAME.focus();
+  MOVIE_NAME.focus();
 }
 
 function handleError(err) {
   ERROR_MESSAGE.textContent = err;
+  console.log(err);
   setTimeout(() => (ERROR_MESSAGE.textContent = ''), 2000);
 }
 
-function updateMovieCard() {}
+function updateMovieCard() {
+  let innerHTML = `<div class="img-container">
+        <img
+          class="poster"
+          src="${movie.poster}"
+          alt=""
+        />
+      </div>
+      <div class="info-wrapper">
+        <h1>${movie.title}</h1>
+        <div><span class="title">Genre: </span>${movie.genre}</div>
+        <div><span class="title">Release Year: </span>${movie.year}</div>
+        <div>
+          <span class="title">Plot: </span>${movie.plot}</div>
+        <div><span class="title">Director: </span>${movie.director}</div>
+        <div><span class="title">Actors: </span>${movie.actors}</div>
+        <div class="rating-wrapper">`;
+  for (const key of Object.keys(movie.ratings)) {
+    innerHTML += `<div class="rating-box">
+            <img class="rating-img" src="./${key}.png" alt="" />
+            <div>${movie.ratings[key]}</div>
+          </div>`;
+  }
+  MOVIE_CARD.innerHTML = innerHTML;
+}
 
 async function searchMovieHandle(e) {
   e.preventDefault();
@@ -30,11 +57,12 @@ async function searchMovieHandle(e) {
       movie.year = new Date(data.Released).getFullYear();
       movie.plot = data.Plot;
       movie.director = data.Director;
-      movie.actors = data.actors;
+      movie.actors = data.Actors;
       movie.ratings = {};
-      for (const rating of data.Ratings) {
-        if (['Internet Movie Database', 'Rotten Tomatoes', 'Metacritic'].includes(rating.Source)) {
-          movie.ratings[rating.Source] = rating.Value;
+      obj = data.Ratings;
+      for (let i = 0; i < Object.keys(data.Ratings).length; i += 1) {
+        if (['Internet Movie Database', 'Rotten Tomatoes', 'Metacritic'].includes(data.Ratings[i].Source)) {
+          movie.ratings[data.Ratings[i].Source] = data.Ratings[i].Value;
         }
       }
       updateMovieCard();
@@ -42,6 +70,8 @@ async function searchMovieHandle(e) {
   } catch (err) {
     handleError(err);
   }
+  focusOnInput();
+  MOVIE_NAME.value = '';
 }
 
 SEARCH_BTN.addEventListener('click', searchMovieHandle);

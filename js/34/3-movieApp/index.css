@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Amatic SC", cursive;
+  font-family: "Shadows Into Light Two", cursive;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
   gap: 20px;
   justify-content: center;
   align-items: flex-end;
-  font-size: 19px;
+  font-size: 23px;
 }
 
 .bg {
@@ -38,6 +38,11 @@ button {
   width: 600px;
 }
 
+button:hover {
+  background-color: -internal-light-dark(#efefef8e, #3b3b3b8e);
+  cursor: pointer;
+}
+
 .movie-search-wrapper {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -45,7 +50,7 @@ button {
   background-color: #ffffff;
   border-width: 2px;
   border-style: outset;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-color: -internal-light-dark(#767676, #858585);
   overflow: hidden;
 }
 
@@ -58,7 +63,7 @@ label {
 input,
 button,
 label {
-  font-size: 20px;
+  font-size: 25px;
   padding: 6px;
 }
 
@@ -75,7 +80,7 @@ input {
   align-self: flex-start;
   border: #323232;
   border-radius: 15px;
-  background: #ffffff4d;
+  background: #ffffff62;
   width: 600px;
   overflow: hidden;
   display: block;
@@ -94,10 +99,12 @@ input {
 
 .img-container {
   padding-bottom: 0;
+  text-align: center;
+  margin-bottom: -8px;
 }
 
-img {
-  width: 100%;
+.poster {
+  height: 60vh;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
 }
@@ -107,15 +114,16 @@ a {
   font-weight: 600;
 }
 
-h2 {
+h1 {
   height: 78px;
   overflow: hidden;
   white-space: normal;
   text-overflow: ellipsis;
+  font-size: 40px;
 }
 
 .info-wrapper {
-  background: #ffffff4d;
+  background: #ffffff73;
   height: max-content;
 }
 
@@ -124,6 +132,29 @@ h2 {
 }
 
 .errorMessage {
-  color: #7e1325;
+  color: #ad2239;
   font-size: 22px;
+}
+
+.title {
+  font-size: 18px;
+  opacity: 0.65;
+}
+
+.rating-img {
+  height: 30px;
+}
+
+.rating-box {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  width: calc(570px / 3);
+}
+
+.rating-box > div {
+  font-size: 19px;
+}
+
+.rating-wrapper {
+  display: flex;
 }
