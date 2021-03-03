@@ -60,7 +60,5 @@ async function fetchUser(e) {
   USERNAME.value = '';
 }
 
-async function main() {}
-
 SEARCH_BTN.addEventListener('click', fetchUser);
 window.addEventListener('load', focusOnInput);
