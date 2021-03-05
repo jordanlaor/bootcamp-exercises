@@ -32,15 +32,19 @@ async function buildHTML() {
   </tr>
   <tr>`;
 
-  for (const index in charKeys) {
-    if (charKeys[index] === 'planet') {
-      innerHTML += `<td>${charKeys[index]} ${Object.keys(characters[0][charKeys[index]])[0]}`;
-      innerHTML += `<td>${charKeys[index]} ${Object.keys(characters[0][charKeys[index]])[1]}`;
-      planetIndex = index;
-    } else {
-      innerHTML += `<td>${charKeys[index]}</td>`;
-    }
-  }
+  charKeys.forEach((key) => {
+    innerHTML += `<td>${key}</td>`;
+  });
+
+  // for (const index in charKeys) {
+  //   if (charKeys[index] === 'planet') {
+  //     innerHTML += `<td>${charKeys[index]} ${Object.keys(characters[0][charKeys[index]])[0]}`;
+  //     innerHTML += `<td>${charKeys[index]} ${Object.keys(characters[0][charKeys[index]])[1]}`;
+  //     planetIndex = index;
+  //   } else {
+  //     innerHTML += `<td>${charKeys[index]}</td>`;
+  //   }
+  // }
   innerHTML += `</tr>`;
   for (const char in characters) {
     innerHTML += `<tr>`;
@@ -60,7 +64,7 @@ async function buildHTML() {
 }
 
 async function getCharacters() {
-  for (let i = 1; i <= 20; i += 1) {
+  for (let i = 1; i <= 10; i += 1) {
     await getPerson(i);
   }
 }
