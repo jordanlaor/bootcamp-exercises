@@ -90,7 +90,12 @@ function createBoard() {
   gameWrapper.classList.remove('none');
   alternateWrapper.classList.add('none');
   cardsWrapper.innerHTML = '';
-  const cols = 4;
+  const cols =
+    parseInt(cardsNum.value) % 6 === 0
+      ? 6
+      : parseInt(cardsNum.value) % 8 === 0 && parseInt(cardsNum.value) > 20
+      ? 8
+      : 4;
   const rows = parseInt(cardsNum.value) / cols;
   cardsWrapper.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
   cardsWrapper.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
