@@ -9,6 +9,28 @@ const alternateDivs = document.querySelectorAll('.alternate');
 const cardsNum = document.querySelector('#cardsNum');
 const mistakes = document.querySelector('.wrong');
 
+// Timer
+const mili = { element: document.querySelector('.mili'), counter: 0 };
+const secs = { element: document.querySelector('.secs'), counter: 0 };
+const mins = { element: document.querySelector('.mins'), counter: 0 };
+function timeCount(unit, countTo) {
+  if (unit.counter === countTo) {
+    unit.counter = 0;
+  } else {
+    unit.counter += 1;
+  }
+  unit.element.textContent = `${unit.counter}`.padStart(2, '0');
+}
+let miliInterval;
+let secsInterval;
+let minsInterval;
+
+function startTimer() {
+  miliInterval = setInterval(() => timeCount(mili, 99), 10);
+  secsInterval = setInterval(() => timeCount(secs, 59), 1000);
+  minsInterval = setInterval(() => timeCount(mins, 59), 60000);
+}
+
 function randomCard(cards) {
   const card = document.createElement('div');
   card.className = 'card';
@@ -111,6 +133,7 @@ function createBoard() {
       '.best'
     ).textContent = `The best player is ${state.best.name} with ${state.best.mistakes} mistakes`;
   }
+  startTimer();
   cardsWrapper.addEventListener('click', cardClicked);
   const newBtn = gameWrapper.querySelector('.new-game');
   newBtn.addEventListener('click', starterPage);
