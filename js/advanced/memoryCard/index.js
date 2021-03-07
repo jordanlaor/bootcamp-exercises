@@ -31,6 +31,18 @@ function startTimer() {
   minsInterval = setInterval(() => timeCount(mins, 59), 60000);
 }
 
+function stopTimer() {
+  clearInterval(miliInterval);
+  clearInterval(secsInterval);
+  clearInterval(minsInterval);
+  mili.counter = 0;
+  mili.element.textContent = `${mili.counter}`.padStart(2, '0');
+  secs.counter = 0;
+  secs.element.textContent = `${secs.counter}`.padStart(2, '0');
+  mins.counter = 0;
+  mins.element.textContent = `${mins.counter}`.padStart(2, '0');
+}
+
 function randomCard(cards) {
   const card = document.createElement('div');
   card.className = 'card';
@@ -41,7 +53,7 @@ function randomCard(cards) {
   cardFront.className = 'card-front';
   card.appendChild(cardFront);
   const [num] = cards.splice(Math.floor(Math.random() * cards.length), 1);
-  cardFront.style.backgroundImage = `url('./images/${num}.png')`;
+  cardFront.style.backgroundImage = `url('./images/dogs/${num}.png')`;
   card.dataset.type = num;
   cardsWrapper.appendChild(card);
 }
@@ -64,6 +76,7 @@ function win() {
     const newBtn = winPage.querySelector('.new-game');
     newBtn.addEventListener('click', isHighscore);
   }, 1000);
+  stopTimer();
 }
 
 function goodPair() {
@@ -112,12 +125,18 @@ function createBoard() {
   gameWrapper.classList.remove('none');
   alternateWrapper.classList.add('none');
   cardsWrapper.innerHTML = '';
-  const cols =
-    parseInt(cardsNum.value) % 6 === 0
-      ? 6
-      : parseInt(cardsNum.value) % 8 === 0 && parseInt(cardsNum.value) > 20
+  let cols =
+    parseInt(cardsNum.value) % 8 === 0 && parseInt(cardsNum.value) > 20
       ? 8
+      : parseInt(cardsNum.value) % 6 === 0
+      ? 6
       : 4;
+  if (window.matchMedia('max-width: 970px')) {
+    cols = 4;
+  }
+  if (window.matchMedia('max-width: 500px')) {
+    cols = 2;
+  }
   const rows = parseInt(cardsNum.value) / cols;
   cardsWrapper.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
   cardsWrapper.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
@@ -133,6 +152,7 @@ function createBoard() {
       '.best'
     ).textContent = `The best player is ${state.best.name} with ${state.best.mistakes} mistakes`;
   }
+
   startTimer();
   cardsWrapper.addEventListener('click', cardClicked);
   const newBtn = gameWrapper.querySelector('.new-game');
@@ -150,6 +170,7 @@ function starterPage() {
   startBtn.addEventListener('click', createBoard);
   document.querySelector('.cardsNumValue').textContent = cardsNum.value;
   cardsNum.addEventListener('input', () => (document.querySelector('.cardsNumValue').textContent = cardsNum.value));
+  stopTimer();
 }
 
 window.addEventListener('load', starterPage);

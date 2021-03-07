@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript - Memory Card</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet" />
   </head>
   <body>
     <div class="page-warpper">
@@ -14,21 +16,35 @@
         <div class="cards-wrapper"></div>
         <div class="sidebar-wrapper">
           <div class="best"></div>
-          <div class="wrong"></div>
+          <div class="wrong-wrapper">
+            You have
+            <div class="wrong"></div>
+            wrong guesses
+          </div>
           <div class="timer">
-            <div class="mins">00</div>
-            <div>:</div>
-            <div class="secs">00</div>
-            <div>:</div>
-            <div class="mili">00</div>
+            <span class="mins">00</span>
+            <span>:</span>
+            <span class="secs">00</span>
+            <span>:</span>
+            <span class="mili">00</span>
           </div>
           <button class="new-game">New Game</button>
         </div>
       </div>
       <div class="alternate-wrapper">
         <div class="alternate start">
-          <input type="range" name="cardsNum" id="cardsNum" min="4" max="40" step="4" value="12" />
-          <div class="cardsNumValue"></div>
+          <div class="range-wrapper">
+            <input
+              type="range"
+              name="cardsNum"
+              id="cardsNum"
+              min="4"
+              max="40"
+              step="4"
+              value="12"
+            />
+            <div class="cardsNumValue"></div>
+          </div>
           <button class="start-game">Start</button>
         </div>
         <div class="alternate win none">
@@ -36,7 +52,6 @@
           <input type="text" name="nickname" id="nickname" placeholder="Your nickname" />
           <button class="new-game">New Game</button>
         </div>
-        <div class="alternate error none"></div>
       </div>
     </div>
     <script src="./index.js"></script>
