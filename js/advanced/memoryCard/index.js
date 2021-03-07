@@ -24,20 +24,24 @@ function randomCard(cards) {
   cardsWrapper.appendChild(card);
 }
 
-function win() {
-  gameWrapper.classList.add('none');
-  alternateWrapper.classList.remove('none');
-  alternateDivs.forEach((div) => div.classList.add('none'));
-  const winPage = document.querySelector('.win');
-  winPage.classList.remove('none');
+function isHighscore() {
   if (state.best.mistakes >= state.mistakes || state.best.mistakes === -1) {
     state.best.mistakes = state.mistakes;
-    setTimeout(() => {
-      state.best.name = prompt('Highscore! What is your name?', 'anonymous');
-    }, 3000);
-    const newBtn = winPage.querySelector('.new-game');
-    newBtn.addEventListener('click', starterPage);
+    state.best.name = document.querySelector('#nickname').value || 'anonymous';
   }
+  starterPage();
+}
+
+function win() {
+  setTimeout(() => {
+    gameWrapper.classList.add('none');
+    alternateWrapper.classList.remove('none');
+    alternateDivs.forEach((div) => div.classList.add('none'));
+    const winPage = document.querySelector('.win');
+    winPage.classList.remove('none');
+    const newBtn = winPage.querySelector('.new-game');
+    newBtn.addEventListener('click', isHighscore);
+  }, 1000);
 }
 
 function goodPair() {
@@ -96,6 +100,11 @@ function createBoard() {
   }
   while (cards.length) {
     randomCard(cards);
+  }
+  if (state.best.mistakes !== -1) {
+    document.querySelector(
+      '.best'
+    ).textContent = `The best player is ${state.best.name} with ${state.best.mistakes} mistakes`;
   }
   cardsWrapper.addEventListener('click', cardClicked);
   const newBtn = gameWrapper.querySelector('.new-game');
