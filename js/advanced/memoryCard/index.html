@@ -10,7 +10,7 @@
   <body>
     <div class="page-warpper">
       <h1>My Memory Card</h1>
-      <div class="game-wrapper">
+      <div class="game-wrapper none">
         <div class="cards-wrapper"></div>
         <div class="sidebar-wrapper">
           <div class="wrong"></div>
@@ -18,7 +18,18 @@
           <button class="new-game">New Game</button>
         </div>
       </div>
-      <div class="altarnate-wrapper none"></div>
+      <div class="alternate-wrapper">
+        <div class="alternate start">
+          <input type="range" name="cardsNum" id="cardsNum" min="4" max="40" step="4" value="12" />
+          <div class="cardsNumValue"></div>
+          <button class="start-game">Start</button>
+        </div>
+        <div class="alternate win none">
+          You Win!
+          <button class="new-game">New Game</button>
+        </div>
+        <div class="alternate error none"></div>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>

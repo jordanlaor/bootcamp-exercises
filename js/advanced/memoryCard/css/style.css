@@ -5,5 +5,69 @@
 }
 
 .none {
-  display: none;
+  display: none !important;
+}
+
+.page-warpper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.game-wrapper {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 1fr;
+}
+
+.cards-wrapper {
+  display: grid;
+  gap: 4px;
+}
+
+.card {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card-back,
+.card-front {
+  border-radius: 12px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background-color: #768798;
+}
+
+.card-back {
+  transform: rotateY(0deg);
+  background-image: url("../images/back.png");
+  background-size: cover;
+}
+
+.card-front.clicked,
+.card-front.found {
+  transform: rotateY(0deg);
+}
+
+.card-back.clicked,
+.card-back.found {
+  transform: rotateY(-180deg);
 }
