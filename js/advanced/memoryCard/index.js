@@ -51,9 +51,12 @@ function randomCard(cards) {
   card.appendChild(cardBack);
   const cardFront = document.createElement('div');
   cardFront.className = 'card-front';
+  const cardFrontImg = document.createElement('div');
+  cardFrontImg.className = 'card-front-img';
+  cardFront.appendChild(cardFrontImg);
   card.appendChild(cardFront);
   const [num] = cards.splice(Math.floor(Math.random() * cards.length), 1);
-  cardFront.style.backgroundImage = `url('./images/dogs/${num}.png')`;
+  cardFrontImg.style.backgroundImage = `url('./images/${document.querySelector('#theme').value}/${num}.png')`;
   card.dataset.type = num;
   cardsWrapper.appendChild(card);
 }
@@ -131,10 +134,10 @@ function createBoard() {
       : parseInt(cardsNum.value) % 6 === 0
       ? 6
       : 4;
-  if (window.matchMedia('max-width: 970px')) {
+  if (window.matchMedia('max-width: 970px').matches) {
     cols = 4;
   }
-  if (window.matchMedia('max-width: 500px')) {
+  if (window.matchMedia('max-width: 500px').matches) {
     cols = 2;
   }
   const rows = parseInt(cardsNum.value) / cols;

@@ -80,11 +80,24 @@ h1 {
   background-size: contain;
   width: -webkit-fill-available;
   height: -webkit-fill-available;
+  padding: 3px;
 }
 
 .card-front {
   transform: rotateY(180deg);
   background-color: #768798;
+}
+
+.card-front-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 92%;
+  height: 100%;
+  margin: 0 4%;
 }
 
 .card-back {
