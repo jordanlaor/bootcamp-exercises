@@ -194,3 +194,27 @@ class PointWorld {
     );
   }
 }
+
+// 6
+class Room {
+  constructor(roomId, level, amount) {
+    this.roomId = roomId;
+    this.level = level;
+    this.amount = amount;
+    this.isFree = true;
+  }
+
+  occupy(amount) {
+    if (this.isFree && this.amount >= amount) {
+      this.isFree = false;
+      return true;
+    }
+    return false;
+  }
+
+  print() {
+    return `Room number ${this.roomId} is on level ${this.level}. It has room for up to ${this.amount}. This room is ${
+      this.isFree ? 'free' : 'occupied'
+    }.`;
+  }
+}
