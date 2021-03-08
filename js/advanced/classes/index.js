@@ -161,3 +161,36 @@ class Point {
     return `x: ${this.x} y: ${this.y}`;
   }
 }
+
+// 5
+class PointWorld {
+  constructor() {
+    this.pointsList = [];
+  }
+
+  sortY() {
+    this.pointsList.sort((pointA, pointB) => pointB.getY() - pointA.getY());
+  }
+
+  unique() {
+    const uniqueList = [];
+    this.pointsList.forEach((point) => {
+      if (!uniqueList.find((uniquePoint) => uniquePoint.isSame(point))) {
+        uniqueList.push(point);
+      }
+    });
+    return uniqueList;
+  }
+
+  sumX() {
+    return this.pointsList.reduce((sum, point) => sum + point.getX(), 0);
+  }
+
+  includes(point) {
+    return (
+      this.pointsList.find(
+        (pointFromList) => pointFromList.getX() === point.getX() && pointFromList.getY() === point.getY()
+      ) || false
+    );
+  }
+}
