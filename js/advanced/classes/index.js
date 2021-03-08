@@ -61,3 +61,58 @@ function sortCars(cars) {
   const sortedCars = [...cars];
   return sortedCars.sort((car1, car2) => car1.getSpeed() - car2.getSpeed());
 }
+
+// 3
+class SortNumber {
+  constructor() {
+    this.numList = [];
+  }
+
+  addNum(num) {
+    if (this.numList.includes(num) || num < 2) {
+      return false;
+    }
+
+    for (let i = 2; i < num / 2; i += 1) {
+      if (num % i === 0) {
+        return false;
+      }
+    }
+    this.numList.push(num);
+    return true;
+  }
+
+  removeNum(num) {
+    const index = this.numList.findIndex((number) => number === num);
+    return Boolean(index >= 0 ? this.numList.splice(index, 1) : false);
+  }
+
+  getAll() {
+    return this.numList;
+  }
+
+  print() {
+    return this.numList.join(', ');
+  }
+
+  share(sn) {
+    return this.numList.filter((num) => sn.getAll().includes(num)).length;
+  }
+
+  union(sn) {
+    const all = [...sn.getAll()];
+    all.push(...this.numList.filter((num) => !all.includes(num)));
+    return all;
+  }
+}
+
+const prime = new SortNumber();
+prime.addNum(2);
+prime.addNum(5);
+prime.addNum(7);
+prime.addNum(9);
+prime.addNum(11);
+const numbers = new SortNumber();
+numbers.addNum(3);
+numbers.addNum(5);
+numbers.addNum(7);
