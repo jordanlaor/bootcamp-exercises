@@ -176,6 +176,7 @@ class PointWorld {
     const uniqueList = [];
     this.pointsList.forEach((point) => {
       if (!uniqueList.find((uniquePoint) => uniquePoint.isSame(point))) {
+        // if (!uniqueList.find((uniquePoint) => uniquePoint.x === point.x && uniquePoint.y === point.y)) {
         uniqueList.push(point);
       }
     });
@@ -216,5 +217,61 @@ class Room {
     return `Room number ${this.roomId} is on level ${this.level}. It has room for up to ${this.amount}. This room is ${
       this.isFree ? 'free' : 'occupied'
     }.`;
+  }
+}
+
+// 7
+class Hotel {
+  constructor(room) {
+    this.rooms = [room];
+  }
+
+  addRoom(room) {
+    if (this.rooms.find((roomFromList) => roomFromList.id === room.id)) {
+      return false;
+    }
+    this.rooms.push(room);
+    return true;
+  }
+
+  addNewRoom(roomId, level, amount) {
+    return this.addRoom(new Room(roomId, level, amount));
+  }
+
+  removeRoom(roomId) {
+    const room = this.rooms.findIndex(roomId);
+    if (room >= 0 && room.isFree) {
+      this.rooms.splice(room, 1);
+      return true;
+    }
+    return false;
+  }
+
+  checkFreeRooms(amount) {
+    return this.rooms.filter((room) => room.amount >= amount);
+  }
+
+  checkIn(roomId, amount) {
+    return Boolean(this.rooms.find((room) => room.roomId === roomId).occupy(amount));
+  }
+
+  highRoomFree() {
+    let maxFloor = 0;
+    let roomsInMax = [];
+    this.rooms.forEach((room) => {
+      if (room.isFree) {
+        if (room.level > maxFloor) {
+          maxFloor = room.level;
+          roomsInMax = [room];
+        } else if (room.level === maxFloor) {
+          roomsInMax.push(room);
+        }
+      }
+    });
+    return roomsInMax.sort((roomA, roomB) => roomB.amount - roomA.amount);
+  }
+
+  getAllRooms(isFree) {
+    return this.rooms.filter((room) => room.isFree === isFree).sort((roomA, roomB) => roomA.roomId - roomB.roomId);
   }
 }
