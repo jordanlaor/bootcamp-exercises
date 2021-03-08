@@ -116,3 +116,48 @@ const numbers = new SortNumber();
 numbers.addNum(3);
 numbers.addNum(5);
 numbers.addNum(7);
+
+// 4
+class Point {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  getX() {
+    return this.x;
+  }
+
+  getY() {
+    return this.y;
+  }
+
+  addToX(x) {
+    this.x += x;
+  }
+
+  addToY(y) {
+    this.y += y;
+  }
+
+  setX(x) {
+    this.x = x;
+  }
+
+  setY(y) {
+    this.y = y;
+  }
+
+  addPoint(point) {
+    this.addToX(point.getX());
+    this.addToY(point.getY());
+  }
+
+  isSame(point) {
+    return this.x === point.getX() && this.y === point.getY();
+  }
+
+  print() {
+    return `x: ${this.x} y: ${this.y}`;
+  }
+}
