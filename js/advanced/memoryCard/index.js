@@ -134,12 +134,13 @@ function createBoard() {
       : parseInt(cardsNum.value) % 6 === 0
       ? 6
       : 4;
-  if (window.matchMedia('max-width: 970px').matches) {
+  if (window.matchMedia('(max-width: 970px)').matches) {
     cols = 4;
   }
-  if (window.matchMedia('max-width: 500px').matches) {
+  if (window.matchMedia('(max-width: 500px)').matches) {
     cols = 2;
   }
+  console.log(cols);
   const rows = parseInt(cardsNum.value) / cols;
   cardsWrapper.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
   cardsWrapper.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
