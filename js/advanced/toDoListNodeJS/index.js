@@ -54,3 +54,8 @@ toggleIsComplete(1000);
 list();
 deleteItem(1002);
 list();
+
+function sum(a, b) {
+  return a + b;
+}
+module.exports = { toDoList, taskId, addItem, getTaskById, deleteItem, toggleIsComplete, sortList, list, sum };
