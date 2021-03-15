@@ -1,8 +1,6 @@
-import Quiz from './Quiz'
+import Quiz from "./Quiz";
 function App() {
-  return (
-    <Quiz />
-  );
+  return <Quiz />;
 }
 
 export default App;
