@@ -22,13 +22,11 @@ class App extends React.Component {
   }
 
   render() {
+    const style = (this.state.counter < 0 && { color: "red" }) || (this.state.counter > 0 && { color: "green" }) || { color: "black" };
     return (
       <div>
         <Button action={this.increase.bind(this)} text="+" />
-        <div
-          className="number"
-          style={(this.state.counter < 0 && { color: "red" }) || (this.state.counter > 0 && { color: "green" }) || { color: "black" }}
-        >
+        <div className="number" style={style}>
           {this.state.counter}
         </div>
         <Button action={this.decrease.bind(this)} text="-" />
