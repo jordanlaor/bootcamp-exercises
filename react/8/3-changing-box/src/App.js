@@ -3,7 +3,7 @@ import Box from "./components/Box.component";
 function App() {
   return (
     <div>
-      <Box />
+      <Box a="a" />
     </div>
   );
 }

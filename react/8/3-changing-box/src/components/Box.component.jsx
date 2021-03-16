@@ -1,19 +1,15 @@
 import React from "react";
 import "./box.css";
 class Box extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { color: "", counter: 0 };
-    this.changeColor = this.changeColor.bind(this);
-  }
+  state = { color: "green", counter: 0 };
+  changeColor = this.changeColor.bind(this);
   componentDidMount() {
     setInterval(this.changeColor, 500);
   }
   changeColor() {
     const colors = ["green", "blue", "purple", "red", "orange", "yellow"];
     this.setState((prevState, prevProp) => {
-      console.log(prevState.counter + 1);
-      return { counter: prevState.counter + 1, color: colors[(prevState.counter + 1) % 6] };
+      return { counter: prevState.counter + 1, color: colors[(prevState.counter + 1) % colors.length] };
     });
   }
   render() {
