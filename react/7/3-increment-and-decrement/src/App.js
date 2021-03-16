@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import "./button.css";
-class Button extends React.Component {
-  render() {
-    return <button onClick={this.props.action}>{this.props.text}</button>;
-  }
-}
+// import "./button.css";
+import Button from "./components/Button/Button.component";
+// class Button extends React.Component {
+//   render() {
+//     return <button onClick={this.props.action}>{this.props.text}</button>;
+//   }
+// }
 class App extends React.Component {
   constructor(props) {
     super(props);
