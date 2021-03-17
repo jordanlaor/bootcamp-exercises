@@ -1,0 +1,13 @@
+.yellow {
+  background: rgb(255, 238, 0);
+}
+.blue {
+  background: blue;
+}
+.red {
+  background: red;
+}
+
+button {
+  margin: 10px;
+}
