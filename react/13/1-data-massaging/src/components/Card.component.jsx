@@ -1,6 +1,6 @@
 function Card(props) {
   return (
-    <div key={props.id}>
+    <div>
       <h2>{props.item.name}</h2>
       <div>Birthday: {props.item.birthday}</div>
       <div>

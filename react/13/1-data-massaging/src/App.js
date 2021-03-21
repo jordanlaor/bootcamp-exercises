@@ -20,7 +20,11 @@ class App extends React.Component {
     return (
       <div key="names" className="names">
         {this.state.names.map((name, index) => {
-          return <Name id={index + 1} name={name} />;
+          return (
+            <React.Fragment key={index}>
+              <Name name={name} />
+            </React.Fragment>
+          );
         })}
       </div>
     );
@@ -30,7 +34,11 @@ class App extends React.Component {
     return (
       <div key="cards" className="cards">
         {this.state.before1990.map((item, index) => {
-          return <Card id={index} item={item} />;
+          return (
+            <React.Fragment key={index}>
+              <Card item={item} />
+            </React.Fragment>
+          );
         })}
       </div>
     );
