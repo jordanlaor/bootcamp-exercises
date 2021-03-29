@@ -23,20 +23,21 @@ function App() {
 
   const resetList = () => setCheckboxes(cbs());
 
-  const deleteFromList = (index) => setCheckboxes(checkboxes.filter((cb, i) => i !== index));
+  const deleteFromList = () => setCheckboxes(checkboxes.filter((cb) => !cb.checked));
 
   return (
     <div>
-      <Btn onClick={resetList} disabled={false} value="reset the list" />
+      <Btn onClick={resetList} value="reset the list" />
+      <Btn onClick={deleteFromList} value="delete" />
+
       <ul>
         {checkboxes.map((cb, index) => {
           return (
             <li>
               <label htmlFor={cb.name}>
-                {cb.name}{" "}
                 <input type="checkbox" name={cb.name} id={cb.name} onChange={() => toggleCheckbox(cb.name)} checked={cb.checked} />
+                {cb.name}
               </label>
-              <Btn onClick={() => deleteFromList(index)} disabled={!cb.checked} value="delete" />
             </li>
           );
         })}
