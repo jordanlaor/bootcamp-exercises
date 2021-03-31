@@ -10,20 +10,20 @@ function App() {
   let [joke, setJoke] = useState("");
   let [fetch, setFetch] = useState(false);
 
-  const fetchJoke = async () => {
+  useEffect(() => {
     let source = axios.CancelToken.source();
-    if (fetch) {
-      const fetchedJoke = (await axios.get(`https://api.chucknorris.io/jokes/random`, { cancelToken: source.token })).data.value;
-      setJoke(fetchedJoke);
-    } else {
-      setJoke("");
-    }
-    return () => {
-      source.cancel("Cancelling in cleanup");
+    const fetchJoke = async () => {
+      if (fetch) {
+        console.log("fetching");
+        const fetchedJoke = (await axios.get(`https://api.chucknorris.io/jokes/random`, { cancelToken: source.token })).data.value;
+        setJoke(fetchedJoke);
+      } else {
+        setJoke("");
+      }
     };
-  };
-
-  useEffect(() => fetchJoke(), [fetch]);
+    fetchJoke();
+    return () => source.cancel();
+  }, [fetch]);
 
   const toggleFetch = () => {
     setFetch(!fetch);
