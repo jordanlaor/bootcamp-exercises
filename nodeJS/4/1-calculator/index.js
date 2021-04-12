@@ -4,19 +4,19 @@ yargs.command({
   describe: "calculates based on command",
   builder: {
     add: {
-      description: "adds two nums",
+      describe: "adds two nums",
       type: "array",
     },
     sub: {
-      description: "sub two nums",
+      describe: "sub two nums",
       type: "array",
     },
     mult: {
-      description: "mult two nums",
+      describe: "mult two nums",
       type: "array",
     },
     pow: {
-      description: "pow of num",
+      describe: "pow of num",
       type: "array",
     },
   },
