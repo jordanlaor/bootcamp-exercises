@@ -17,7 +17,7 @@ yargs.command({
     },
     pow: {
       describe: "pow of num",
-      type: "array",
+      type: "number",
     },
   },
   handler: function (argv) {
