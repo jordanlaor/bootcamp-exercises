@@ -50,6 +50,8 @@ const server = http.createServer(function (req, res) {
         break;
 
       default:
+        res.writeHead(404);
+        res.end("404");
         break;
     }
   else {
