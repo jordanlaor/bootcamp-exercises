@@ -1,4 +1,5 @@
 const http = require("http");
+const https = require("https");
 const fs = require("fs");
 const path = require("path");
 
@@ -23,6 +24,18 @@ const server = http.createServer(function (req, res) {
         fs.readFile("./index.css", (error, content) => {
           if (content) {
             res.writeHead(200, { "Content-Type": "text/css" });
+            res.end(content, "utf-8");
+          } else {
+            res.writeHead(500);
+            res.end("Sorry, check with the site admin for error: " + error.code + " ..\n");
+          }
+        });
+
+        break;
+      case "/index.js":
+        fs.readFile("./index.js", (error, content) => {
+          if (content) {
+            res.writeHead(200, { "Content-Type": "text/javascript" });
             res.end(content, "utf-8");
           } else {
             res.writeHead(500);
