@@ -5,9 +5,10 @@ import "./App.css";
 function App() {
   let [movies, setMovies] = useState([]);
   const getMovies = async () => {
-    const url = process.env.NODE_ENV;
+    console.log(process.env.NODE_ENV);
+    const url = process.env.NODE_ENV === "development" ? "http://localhost:53317/" : "";
     try {
-      const { data } = await axios.get("/api/movies");
+      const { data } = await axios.get(url + "api/movies");
       return data;
     } catch (error) {
       console.log(error.message);
