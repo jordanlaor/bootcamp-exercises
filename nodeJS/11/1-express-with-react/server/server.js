@@ -1,10 +1,14 @@
 const express = require("express");
 const { getAllMovies, getMovieById, createMovie, editMovie, deleteMovie } = require("./utils");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+const pubDir = path.join(__dirname, "../client/build");
+app.use(express.static(pubDir));
 
 app.get("/api/movies", async (req, res) => {
   try {
@@ -52,5 +56,6 @@ app.delete("/api/movies/:id", async (req, res) => {
   }
 });
 
+// start the app
 const PORT = process.env.PORT || 53317;
 app.listen(PORT, () => console.log("listening!"));

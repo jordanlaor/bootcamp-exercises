@@ -5,6 +5,7 @@ import "./App.css";
 function App() {
   let [movies, setMovies] = useState([]);
   const getMovies = async () => {
+    const url = process.env.NODE_ENV;
     try {
       const { data } = await axios.get("/api/movies");
       return data;
@@ -15,8 +16,8 @@ function App() {
 
   const renderMovies = async () => {
     {
-      const moviesfromApi = await getMovies();
-      setMovies(moviesfromApi);
+      const moviesFromApi = await getMovies();
+      setMovies(moviesFromApi);
     }
   };
 
