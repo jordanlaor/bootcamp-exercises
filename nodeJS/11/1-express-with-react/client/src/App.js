@@ -6,7 +6,7 @@ function App() {
   let [movies, setMovies] = useState([]);
   const getMovies = async () => {
     try {
-      const { data } = await axios.get("http://localhost:53317/api/movies");
+      const { data } = await axios.get("/api/movies");
       return data;
     } catch (error) {
       console.log(error.message);
