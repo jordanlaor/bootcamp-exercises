@@ -8,7 +8,7 @@
 1.6 db.restaurants.find({"address.coordinates":[-77.46574,40.6774]})
 1.7 db.restaurants.find().sort({name: 1})
 1.8 db.restaurants.find().sort({"address.city": 1})
-1.9 db.restaurants.updateOne({\_id: ObjectId("607d414a4cd37b1b390640c5")}, {$set: {name: "gooci" }})
+1.9 db.restaurants.updateOne({_id: ObjectId("607d414a4cd37b1b390640c5")}, {$set: {name: "gooci" }})
 1.10 db.restaurants.updateOne({_id: ObjectId("607d414a4cd37b1b390640c5")}, {$push:{reviews: {date: ISODate(), score: 7}}})
 1.11 db.restaurants.updateMany({},{$set:{kosher: true}})
 1.12 db.restaurants.deleteOne({_id:ObjectId("607d414a4cd37b1b390640c4")})
