@@ -53,7 +53,10 @@ const Product = mongoose.model("Product", {
   name: {
     type: String,
     required: true,
-    unique: true,
+    // unique: true,
+    async validate(value) {
+      if (await Product.findOne({ name: value })) throw "name needs to be unique";
+    },
   },
   category: {
     type: String,
@@ -71,68 +74,68 @@ const Product = mongoose.model("Product", {
   },
 });
 
-const product1 = new Product({
-  name: "doll",
-  category: "toy",
-  isActive: true,
-  details: {
-    description: "fluffy doll",
-    price: 40,
-    discount: 5,
-    images: [fs.readFileSync("./image.jpeg"), fs.readFileSync("./image2.jpeg")],
-    phoneNumber: "0548370861",
-  },
-});
+// const product1 = new Product({
+//   name: "doll",
+//   category: "toy",
+//   isActive: true,
+//   details: {
+//     description: "fluffy doll",
+//     price: 40,
+//     discount: 5,
+//     images: [fs.readFileSync("./image.jpeg"), fs.readFileSync("./image2.jpeg")],
+//     phoneNumber: "0548370861",
+//   },
+// });
 
-const product3 = new Product({
-  name: "lego",
-  category: "toy",
-  details: {
-    description: "everyone loves lego",
-    price: 100,
-    discount: 10,
-    images: [fs.readFileSync("./image.jpeg"), fs.readFileSync("./image2.jpeg")],
-    phoneNumber: "+972523459721",
-    dateAdded: new Date("01-01-2003"),
-  },
-});
-const product4 = new Product({
-  name: "cake",
-  category: "dessert",
-  details: {
-    description: "for birthdays or just for fun",
-    price: 130,
-    discount: 15,
-    images: [fs.readFileSync("./image.jpeg"), fs.readFileSync("./image2.jpeg")],
-    phoneNumber: "0503459333",
-    dateAdded: new Date("10-08-2020"),
-  },
-});
-const product2 = new Product({
-  name: "doll",
-  category: "toy",
-  isActive: true,
-  details: {
-    description: "fluffy doll",
-    price: 30,
-    images: [fs.readFileSync("./image.jpeg"), fs.readFileSync("./image2.jpeg")],
-    phoneNumber: "+972523459721",
-  },
-});
+// const product3 = new Product({
+//   name: "lego",
+//   category: "toy",
+//   details: {
+//     description: "everyone loves lego",
+//     price: 100,
+//     discount: 10,
+//     images: [fs.readFileSync("./image.jpeg"), fs.readFileSync("./image2.jpeg")],
+//     phoneNumber: "+972523459721",
+//     dateAdded: new Date("01-01-2003"),
+//   },
+// });
+// const product4 = new Product({
+//   name: "cake",
+//   category: "dessert",
+//   details: {
+//     description: "for birthdays or just for fun",
+//     price: 130,
+//     discount: 15,
+//     images: [fs.readFileSync("./image.jpeg"), fs.readFileSync("./image2.jpeg")],
+//     phoneNumber: "0503459333",
+//     dateAdded: new Date("10-08-2020"),
+//   },
+// });
+// const product2 = new Product({
+//   name: "doll",
+//   category: "toy",
+//   isActive: true,
+//   details: {
+//     description: "fluffy doll",
+//     price: 30,
+//     images: [fs.readFileSync("./image.jpeg"), fs.readFileSync("./image2.jpeg")],
+//     phoneNumber: "+972523459721",
+//   },
+// });
 
-product1
-  .save()
-  .then((ful) => console.log(ful))
-  .catch((err) => console.log(err));
-product2
-  .save()
-  .then((ful) => console.log(ful))
-  .catch((err) => console.log(err));
-product3
-  .save()
-  .then((ful) => console.log(ful))
-  .catch((err) => console.log(err));
-product4
-  .save()
-  .then((ful) => console.log(ful))
-  .catch((err) => console.log(err));
+// product1
+//   .save()
+//   .then((ful) => console.log(ful))
+//   .catch((err) => console.log(err));
+// product2
+//   .save()
+//   .then((ful) => console.log(ful))
+//   .catch((err) => console.log(err));
+// product3
+//   .save()
+//   .then((ful) => console.log(ful))
+//   .catch((err) => console.log(err));
+// product4
+//   .save()
+//   .then((ful) => console.log(ful))
+//   .catch((err) => console.log(err));
