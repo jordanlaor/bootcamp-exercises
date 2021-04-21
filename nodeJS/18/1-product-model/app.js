@@ -61,6 +61,10 @@ app.get("/api/products/:id", async (req, res) => {
   }
 });
 
+app.use((req, res) => {
+  res.status(404).send("no such request");
+});
+
 // start listening
 const PORT = process.env.PORT || 7887;
 app.listen(PORT, () => console.log("listening!"));
