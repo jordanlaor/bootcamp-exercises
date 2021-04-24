@@ -77,4 +77,15 @@ productsRouter.delete("/api/products/:id", async (req, res) => {
   }
 });
 
+// delete all products
+productsRouter.delete("/api/products", async (req, res) => {
+  try {
+    const products = await Product.deleteMany({});
+    if (!products) return res.status(404).send({ message: `no products` });
+    return res.status(200).send(products);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 module.exports = productsRouter;
